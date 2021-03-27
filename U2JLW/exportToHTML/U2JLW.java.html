@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>U2JLW.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #77b767; font-style: italic;}
+.s4 { color: #629755; font-weight: bold; font-style: italic;}
+.s5 { color: #6897bb;}
+.s6 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+U2JLW.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">info.DataAndName</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+<span class="s2">/**</span>
+ <span class="s2">* </span><span class="s3">&lt;b&gt;</span><span class="s2">ЛБ2</span><span class="s3">&lt;/b&gt;</span><span class="s2">.</span>
+ <span class="s2">* </span><span class="s4">@autor </span><span class="s2">Okrut</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">U2JLW {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner scanner=</span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">ArrayList&lt;Integer&gt; numbArray=</span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">average=</span><span class="s5">0</span><span class="s0">, </span><span class="s1">numberOf=</span><span class="s5">0</span><span class="s0">;</span>
+
+        <span class="s2">/**</span>
+         <span class="s2">* </span><span class="s4">@exception </span><span class="s2">Task1 могут быть введены не целые числа - NumberFormatException</span>
+         <span class="s2">*/</span>
+        <span class="s0">try</span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s6">&quot;3.</span><span class="s0">\t</span><span class="s6">Вывести на консоль те числа, длина которых больше средней, а также длину.&quot; </span><span class="s1">+</span>
+                    <span class="s6">&quot; </span><span class="s0">\n</span><span class="s6">Введите целые числа в строку через пробел&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">String enterString =scanner.nextLine()</span><span class="s0">;</span>
+            <span class="s0">for</span><span class="s1">(String part:enterString.split(</span><span class="s6">&quot; &quot;</span><span class="s1">)){</span>
+                <span class="s1">average+=part.length()</span><span class="s0">;</span>
+                <span class="s1">numbArray.add(Integer.parseInt(part))</span><span class="s0">;</span>
+                <span class="s1">numberOf++</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">average=average/numberOf</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s6">&quot;Средняя длинна&quot;</span><span class="s1">+average)</span><span class="s0">;</span>
+            <span class="s0">for</span><span class="s1">(String part:enterString.split(</span><span class="s6">&quot; &quot;</span><span class="s1">)){</span>
+                <span class="s0">if</span><span class="s1">(part.length()&gt;=average) System.out.println(part+</span><span class="s6">&quot; &quot; </span><span class="s1">+ part.length())</span><span class="s0">;</span>
+            <span class="s1">}</span>
+         <span class="s1">} </span><span class="s0">catch</span><span class="s1">(NumberFormatException e){</span>
+            <span class="s1">System.out.println(</span><span class="s6">&quot;Что-то не то введено! Прерываю выполнение.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">scanner.nextLine()</span><span class="s0">;</span>
+        <span class="s2">/**</span>
+         <span class="s2">* </span><span class="s4">@exception </span><span class="s2">Task2 могут быть введены не целые числа - NumberFormatException</span>
+         <span class="s2">*/</span>
+        <span class="s0">try</span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s6">&quot;Ввести с консоли п -размерность матрицы а [ п ][ п ]. Задать значения элементов матрицы в интервале значений от -п&quot; </span><span class="s1">+</span>
+                    <span class="s6">&quot; до п с помощью генератора случайных чисел. 3.</span><span class="s0">\t</span><span class="s6">Найти и вывести наибольшее число возрастающих элементов матрицы, идущих подряд.&quot; </span><span class="s1">+</span>
+                    <span class="s6">&quot;</span><span class="s0">\n</span><span class="s6">Введите размерность&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Integer size =scanner.nextInt()</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">array[][]=</span><span class="s0">new int</span><span class="s1">[size][size]</span><span class="s0">;</span>
+            <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s5">0</span><span class="s0">;</span><span class="s1">i&lt;size</span><span class="s0">;</span><span class="s1">i++){</span>
+                <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">j=</span><span class="s5">0</span><span class="s0">;</span><span class="s1">j&lt;size</span><span class="s0">;</span><span class="s1">j++){</span>
+                    <span class="s1">array[i][j]=(</span><span class="s0">int</span><span class="s1">)(Math.random()*(</span><span class="s5">2</span><span class="s1">*size+</span><span class="s5">1</span><span class="s1">))-size</span><span class="s0">;</span>
+                    <span class="s1">System.out.print(array[i][j]+</span><span class="s6">&quot;   &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s1">System.out.println()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">int </span><span class="s1">max=</span><span class="s5">0</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">number=</span><span class="s5">0</span><span class="s0">;</span>
+            <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s5">0</span><span class="s0">;</span><span class="s1">i&lt;size</span><span class="s0">;</span><span class="s1">i++){</span>
+                <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">j=</span><span class="s5">0</span><span class="s0">;</span><span class="s1">j&lt;size-</span><span class="s5">1</span><span class="s0">;</span><span class="s1">j++){</span>
+                    <span class="s0">if</span><span class="s1">(array[i][j]&lt;array[i][j+</span><span class="s5">1</span><span class="s1">]){</span>
+                        <span class="s1">number++</span><span class="s0">;</span>
+                        <span class="s0">if</span><span class="s1">(max &lt; number){</span>
+                            <span class="s1">max = number+</span><span class="s5">1</span><span class="s0">;</span><span class="s1">}</span>
+                    <span class="s1">}</span>
+                    <span class="s0">else</span>
+                        <span class="s1">number=</span><span class="s5">0</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                <span class="s1">}</span>
+            <span class="s1">System.out.println(max)</span><span class="s0">;</span>
+       <span class="s1">}</span><span class="s0">catch </span><span class="s1">(NumberFormatException e){</span>
+            <span class="s1">System.out.println(</span><span class="s6">&quot;Что-то не то введено! Прерываю выполнение.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">DataAndName.seeDateAndName()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

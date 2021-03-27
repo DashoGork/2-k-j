@@ -1,0 +1,18 @@
+Patient/Service.java
+ Patient.Service
+SquareEquation/SquareEquation.java
+ SquareEquation.SquareEquation
+SquareEquation/ArchiveSquareEquation.java
+ SquareEquation.ArchiveSquareEquation
+Patient/Patient.java
+ Patient.Patient
+Patient/PatientArchive.java
+ Patient.PatientArchive
+SquareEquation/ServiceSquareEquations.java
+ SquareEquation.ServiceSquareEquations
+Main.java
+ Main
+Polinom/ArchivePolinom.java
+ Polinom.ArchivePolinom
+Polinom/Polinom.java
+ Polinom.Polinom
